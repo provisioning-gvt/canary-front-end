@@ -16,7 +16,7 @@ const ProductForm = () => {
   const fetchProducts = async () => {
     setLoading(true);
     try {
-      const response = await axios.get('https://node-js-server.azurewebsites.net:8080/api/products');
+      const response = await axios.get('https://node-js-server.azurewebsites.net/api/products');
       setProducts(response.data);
     } catch (error) {
       console.error("There was an error fetching the products!", error);
@@ -29,10 +29,10 @@ const ProductForm = () => {
     event.preventDefault();
     try {
       if (editId) {
-        await axios.put(`https://node-js-server.azurewebsites.net:8080/api/products/${editId}`, { name, price });
+        await axios.put(`https://node-js-server.azurewebsites.net/api/products/${editId}`, { name, price });
         setEditId(null);
       } else {
-        await axios.post('https://node-js-server.azurewebsites.net:8080/api/products', { name, price });
+        await axios.post('https://node-js-server.azurewebsites.net/api/products', { name, price });
       }
       setName('');
       setPrice('');
