@@ -16,7 +16,7 @@ const ProductForm = () => {
   const fetchProducts = async () => {
     setLoading(true);
     try {
-      const response = await axios.get('http://canary-react-frontend.azurewebsites.net:8080/api/products');
+      const response = await axios.get('http://node-js-server.azurewebsites.net:8080/api/products');
       setProducts(response.data);
     } catch (error) {
       console.error("There was an error fetching the products!", error);
@@ -29,10 +29,10 @@ const ProductForm = () => {
     event.preventDefault();
     try {
       if (editId) {
-        await axios.put(`http://canary-react-frontend.azurewebsites.net:8080/api/products/${editId}`, { name, price });
+        await axios.put(`http://node-js-server.azurewebsites.net:8080/api/products/${editId}`, { name, price });
         setEditId(null);
       } else {
-        await axios.post('http://canary-react-frontend.azurewebsites.net:8080/api/products', { name, price });
+        await axios.post('http://node-js-server.azurewebsites.net:8080/api/products', { name, price });
       }
       setName('');
       setPrice('');
