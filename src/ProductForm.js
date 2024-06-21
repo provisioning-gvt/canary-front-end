@@ -49,7 +49,7 @@ const ProductForm = () => {
   };
 
   return (
-    <div className="container">
+    <div className="product-form">
       <h2>Product Form</h2>
       <form onSubmit={handleSubmit}>
         <div>
