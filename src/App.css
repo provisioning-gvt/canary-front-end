@@ -111,7 +111,7 @@ li button:hover {
 
 @media (max-width: 480px) {
   .App-header, .container {
-    width: 95%;
+    width: 100%;
   }
 
   button, input {
